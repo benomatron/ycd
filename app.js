@@ -9,8 +9,6 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var request = require('request');
 
-//var Camp = require('./models/camps');
-//var Comment = require('./models/comment');
 var User = require('./models/user');
 
 var campRoutes = require('./routes/camps');
