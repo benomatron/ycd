@@ -53,7 +53,7 @@ app.use(indexRoutes);
 
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://admin:abc-123@ds047666.mlab.com:47666/ycd');
+mongoose.connect('mongodb://admin:abc123@ds047666.mlab.com:47666/ycd');
 
 seedDB();
 
