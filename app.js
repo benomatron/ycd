@@ -58,6 +58,6 @@ mongoose.connect('mongodb://127.0.0.1/camps');
 //seedDB();
 
 // LISTENER
-app.listen(3000, '127.0.0.1', function () {
+app.listen(process.env.PORT, process.env.IP, function () {
     console.log('boogers');
 });
