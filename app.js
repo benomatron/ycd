@@ -53,7 +53,7 @@ app.set('view engine', 'ejs');
 
 mongoose.connect('mongodb://admin:abc123@ds047666.mlab.com:47666/ycd');
 
-seedDB();
+//seedDB();
 
 // LISTENER
 app.listen(process.env.PORT, process.env.IP, function () {
