@@ -57,6 +57,6 @@ mongoose.connect(process.env.DBURL);
 //seedDB();
 
 // LISTENER
-app.listen(process.env.PORT, process.env.IP, function () {
+app.listen(process.env.PORT || 3000, process.env.IP || '127.0.0.1', function () {
     console.log('boogers ' + process.env.PORT);
 });
