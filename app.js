@@ -53,9 +53,9 @@ app.use(indexRoutes);
 
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb://127.0.0.1/camps');
+mongoose.connect('mongodb://admin:abc-123@ds047666.mlab.com:47666/ycd');
 
-//seedDB();
+seedDB();
 
 // LISTENER
 app.listen(process.env.PORT, process.env.IP, function () {
