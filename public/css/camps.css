@@ -1,0 +1,29 @@
+h1 {
+  text-align: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.camp-form {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail .img-responsive {
+  width: 100%;
+}
+
+.caption-full {
+  padding: 10px;
+}
+
+#kill-form {
+  display: inline;
+}

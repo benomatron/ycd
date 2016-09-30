@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="camp-form">
+            <h1>edit comment</h1>
+            <form action=<%= '/camps/' + camp.id + '/comments/' + comment.id + '?_method=put'%> method='post'>
+                <div class="form-group">
+                    <textarea class="form-control" name='comment[text]'><%= comment.text %></textarea>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary btn-large btn-block" type='submit'>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

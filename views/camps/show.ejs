@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Flamp</p>
+            <ul class="list-group">
+                <li class="list-group-item">spawns</li>
+                <li class="list-group-item">chownk</li>
+                <li class="list-group-item">spawns</li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src=<%= camp.image %>></img>
+                <div class="caption-full">
+                    <h4 class="pull-right">$999</h4>
+                    <h4><a href="#"><%= camp.name %></a> created by <em><%= camp.creator.username %></em></h4>
+                    <p><%= camp.description %></p>
+                    <% if (currentUser && camp.creator._id.equals(currentUser._id)) { %>
+                        <a class="btn btn-warning" href=<%= '/camps/' + camp.id + '/edit' %>>Edit Camp</a>
+                        <form id="kill-form" action=<%= '/camps/' + camp.id + '?_method=delete' %> method="post">
+                            <input class="btn btn-danger" type="submit" value="Kill Campers">
+                        </form>
+                    <% } %>
+                </div>
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href=<%= '/camps/' + camp.id + '/comments/new' %>>Leave Review</a>
+                </div>
+                <hr>
+                <% camp.comments.forEach(function(comment) { %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= comment.author.username %></strong>
+                            <span class="pull-right">10 days</span>
+                            <p><%= comment.text %></p>
+                            <% if (currentUser && comment.author._id.equals(currentUser._id)) { %>
+                                <a class="btn btn-warning" href=<%= '/camps/' + camp.id + '/comments/' + comment._id + '/edit' %>>Edit Comment</a>
+                                <form id="kill-form" action=<%= '/camps/' + camp.id + '/comments/' + comment._id + '?_method=delete' %> method="post">
+                                    <input class="btn btn-danger" type="submit" value="Delete">
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>
+                    <hr>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>
